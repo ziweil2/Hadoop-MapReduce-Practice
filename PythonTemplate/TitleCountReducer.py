@@ -2,11 +2,18 @@
 from operator import itemgetter
 import sys
 
-#TODO
+word_counts = {}
 
 # input comes from STDIN
 for line in sys.stdin:
-    # TODO
+    line = line.strip()
+    word, count = line.split('\t', 1)
+    count = int(count)
 
-# TODO
-# print('%s\t%s' % (  ,  )) print as final output
+    if word in word_counts:
+	word_counts[word] += count
+    else:
+	word_counts[word] = count
+
+for word, count in word_counts.items():
+    print('%s\t%s' % (word, count))

@@ -3,29 +3,28 @@
 import sys
 import string
 
-
-
 stopWordsPath = sys.argv[1]
 delimitersPath = sys.argv[2]
 
+stopWords = set()
 
-# TODO
 with open(stopWordsPath) as f:
-    # TODO
+    for line in f:
+	stopWords.add(line.strip().lower())
 
-
-
-
-
-
-#TODO 
 with open(delimitersPath) as f:
-    # TODO
+    delimiters =  f.read().strip()
 
 for line in sys.stdin:
-  
-    # TODO
+    line = line.strip()
+    
+    for d in delimiters:
+	line = line.replace(d, ' ')
 
-    # print('%s\t%s' % (  ,  )) pass this output to reducer
+    words = line.split()
+
+    for word in words:
+	if word is not null and word.lower() not in stopWords:
+	    print('%s\t%s' % (word.lower() , 1))
 
 
