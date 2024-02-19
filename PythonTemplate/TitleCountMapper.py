@@ -10,21 +10,21 @@ stopWords = set()
 
 with open(stopWordsPath) as f:
     for line in f:
-	stopWords.add(line.strip().lower())
+        stopWords.add(line.strip().lower())
 
 with open(delimitersPath) as f:
-    delimiters =  f.read().strip()
+    delimiters = f.read().strip()
 
 for line in sys.stdin:
     line = line.strip()
     
     for d in delimiters:
-	line = line.replace(d, ' ')
+        line = line.replace(d, ' ')
 
     words = line.split()
 
     for word in words:
-	if word is not null and word.lower() not in stopWords:
-	    print('%s\t%s' % (word.lower() , 1))
+        if word is not null and word.lower() not in stopWords:
+            print('%s\t%s' % (word.lower() , 1))
 
 

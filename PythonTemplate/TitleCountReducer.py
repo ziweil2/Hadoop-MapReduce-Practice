@@ -11,9 +11,9 @@ for line in sys.stdin:
     count = int(count)
 
     if word in word_counts:
-	word_counts[word] += count
+        word_counts[word] += count
     else:
-	word_counts[word] = count
+        word_counts[word] = count
 
 for word, count in word_counts.items():
     print('%s\t%s' % (word, count))
