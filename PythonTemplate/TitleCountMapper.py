@@ -24,7 +24,7 @@ for line in sys.stdin:
     words = line.split()
 
     for word in words:
-        if word is not null and word.lower() not in stopWords:
+        if word and word.lower() not in stopWords:
             print('%s\t%s' % (word.lower() , 1))
 
 
