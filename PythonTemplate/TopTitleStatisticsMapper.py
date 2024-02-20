@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 import sys
 
-
 for line in sys.stdin:
-    # TODO
-    
-    # print('%s\t%s' % (  ,  )) pass this output to reducer
+    line = line.strip()
+    word, count = line.split('\t', 1)
+    print('%s\t%s' % ( None, count ))

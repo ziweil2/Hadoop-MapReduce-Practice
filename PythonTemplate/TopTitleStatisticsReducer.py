@@ -2,11 +2,21 @@
 import sys
 import math
 
-
-#TODO
+counts  = []
 
 for line in sys.stdin:
-    # TODO
+    _, count = line.strip().split('\t', 1)
+    counts.append(int(count))
 
-#TODO
-# print('%s\t%s' % (  ,  )) print as final output
+_total = sum(counts)
+_mean = total / len(counts)
+_min = min(counts)
+_max = max(counts)
+
+variance = sum((x - mean) ** 2 for x in counts) / len(counts)
+
+print('%s\t%s' % ( 'Mean' , _mean))
+print('%s\t%s' % ( 'Sum' ,  _total))
+print('%s\t%s' % ( 'Min' , _min))
+print('%s\t%s' % ( 'Max' , _max))
+print('%s\t%s' % ( 'Var' , variance))
