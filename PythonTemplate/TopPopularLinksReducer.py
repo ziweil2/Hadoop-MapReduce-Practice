@@ -11,5 +11,5 @@ for line in sys.stdin:
 
 top_links = sorted(link_counts, key = lambda x: (x[1],x[0]))
 
-for word, count in top_links:
+for link, count in top_links:
     print('%s\t%s' % (link, count))
