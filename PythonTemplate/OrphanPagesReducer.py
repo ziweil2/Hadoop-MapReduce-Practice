@@ -1,12 +1,17 @@
 #!/usr/bin/env python3
 import sys
 
-
-#TODO
-
+pages = set()
+referenced = set()
 
 for line in sys.stdin:
-  # TODO
+  line = line.strip()
+  page, link = line.strip().split('\t', 1)
 
-#TODO
-# print(xx) print as final output
+  pages.add(page)
+  referenced.add(link)
+
+orphans = pages - referenced
+
+for page in sorted(orphans):
+    print(page)
