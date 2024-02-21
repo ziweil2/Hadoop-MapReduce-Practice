@@ -16,5 +16,5 @@ for line in sys.stdin:
     else: 
         link_counts[link] += 1
 
-for link, count in link_counts:
+for link, count in link_counts.items():
     print('%s\t%s' % ( link, count ))
