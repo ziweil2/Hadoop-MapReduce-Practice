@@ -8,8 +8,8 @@ for line in sys.stdin:
   line = line.strip()
   page, link = line.strip().split('\t', 1)
 
-  pages.add(page)
-  referenced.add(link)
+  pages.add(int(page))
+  referenced.add(int(link))
 
 orphans = pages - referenced
 

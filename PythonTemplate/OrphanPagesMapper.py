@@ -9,4 +9,4 @@ for line in sys.stdin:
     links = links.strip().split()
     
     for link in links:
-        print('%s\t%s' % ( page, link )
+        print('%s\t%s' % ( page, link ))
