@@ -1,20 +1,17 @@
 #!/usr/bin/env python3
 import sys
 
-
 leaguePath = sys.argv[1]
-#TODO
-
+leaguePages = set()
 
 with open(leaguePath) as f:
-	#TODO
-
-
-
-
+    for line in f:
+        page = line.strip()
+        leaguePages.add(page)
 
 for line in sys.stdin:
+    line = line.strip()
+    page, count = line.split('\t', 1)
 
-       #TODO
-
-       # print('%s\t%s' % (  ,  )) pass this output to reducer
+    if page in leaguePages:
+        print('%s\t%s' % ( page, count ))

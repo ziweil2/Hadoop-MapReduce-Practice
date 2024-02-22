@@ -1,11 +1,32 @@
 #!/usr/bin/env python3
 import sys
-#TODO
+
+pageCounts = []
 
 # input comes from STDIN
 for line in sys.stdin:
-    # TODO
+    line = line.strip()
+    page, count = line.split('\t', 1)
+    pageCounts.append((int(page), int(count)))
 
+pageCounts.sort(key=lambda x: x[1], reverse=False)
 
-#TODO
-# print('%s\t%s' % (  ,  )) print as final output
+currentRank = 0
+currentCount = 0
+counter = 0
+pageRanks = []
+
+for page, count in pageCounts:
+    if count > currentCount and counter > 0:
+        currentCount = count
+        currentRank = counter
+        pageRanks.append(page, currentRank)
+    else:
+        pageRanks.append(page, currentRank)    
+
+    counter += 1
+
+pageRanks.sort(key=lambda x: x[0], reverse = True)
+
+for page, rank in pageRanks:
+    print('%s\t%s' % ( page, rank ))
