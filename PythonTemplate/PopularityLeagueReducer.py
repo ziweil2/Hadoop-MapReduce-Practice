@@ -18,12 +18,12 @@ pageRanks = []
 
 for page, count in pageCounts:
     if count > currentCount and counter > 0:
-        currentCount = count
         currentRank = counter
-        pageRanks.append(page, currentRank)
+        pageRanks.append((page, currentRank))
     else:
-        pageRanks.append(page, currentRank)    
+        pageRanks.append((page, currentRank))
 
+    currentCount = count
     counter += 1
 
 pageRanks.sort(key=lambda x: x[0], reverse = True)
