@@ -11,5 +11,5 @@ for line in sys.stdin:
      
 top_business = sorted(bus_review, key=lambda x: (-x[1],x[0]))
 
-for bus, star in bus_review:
-    print('%s\t%s' % ( bus, star ))
+for bus, _ in top_business:
+    print(bus)
