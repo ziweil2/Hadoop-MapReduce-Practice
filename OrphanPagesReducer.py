@@ -9,7 +9,8 @@ for line in sys.stdin:
   page, link = line.strip().split('\t', 1)
 
   pages.add(int(page))
-  referenced.add(int(link))
+  if link != page:
+      referenced.add(int(link))
 
 orphans = pages - referenced
 
