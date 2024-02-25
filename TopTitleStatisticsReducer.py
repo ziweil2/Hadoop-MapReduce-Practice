@@ -15,8 +15,8 @@ _max = max(counts)
 
 variance = sum((x - mean) ** 2 for x in counts) / len(counts)
 
-print('%s\t%s' % ( 'Mean' , mean))
+print('%s\t%s' % ( 'Mean' , int(mean)))
 print('%s\t%s' % ( 'Sum' , total))
 print('%s\t%s' % ( 'Min' , _min))
 print('%s\t%s' % ( 'Max' , _max))
-print('%s\t%s' % ( 'Var' , variance))
+print('%s\t%s' % ( 'Var' , int(variance)))
